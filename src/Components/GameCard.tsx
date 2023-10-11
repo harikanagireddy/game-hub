@@ -8,6 +8,7 @@ import {
   Image,
   Text,
 } from "@chakra-ui/react";
+import PlatformIconList from "./PlatformIconList";
 
 interface Gameprops {
   game: Game;
@@ -19,13 +20,9 @@ const GameCard = ({ game }: Gameprops) => {
       <Image src={game.background_image} />
       <CardBody>
         <Heading fontSize="2xl">{game.name}</Heading>
-        {game.parent_platforms.map(
-          (
-            { platform } // platform next to map is destructed to access platform.name else we need to use platform.platform.name
-          ) => (
-            <Text>{platform.name}</Text>
-          )
-        )}
+        <PlatformIconList
+          platforms={game.parent_platforms.map((p) => p.platform)}
+        />
       </CardBody>
     </Card>
   );
