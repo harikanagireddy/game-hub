@@ -11,7 +11,7 @@ interface Gameprops {
 
 const GameCard = ({ game }: Gameprops) => {
   return (
-    <Card width="270px" borderRadius={20} overflow="hidden">
+    <Card>
       <Image src={getOptimizedImages(game.background_image)} />
       <CardBody>
         <Heading fontSize="xl">{game.name}</Heading>
