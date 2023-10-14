@@ -1,4 +1,11 @@
-import { HStack, Image, List, ListItem, Spinner, Text } from "@chakra-ui/react";
+import {
+  Button,
+  HStack,
+  Image,
+  List,
+  ListItem,
+  Spinner,
+} from "@chakra-ui/react";
 import useGenres from "../hooks/useGenres";
 import getOptimizedImages from "../services/getOptimizedImages";
 
@@ -16,7 +23,9 @@ const GenreList = () => {
               borderRadius={8}
               src={getOptimizedImages(genre.image_background)}
             />
-            <Text fontSize="lg">{genre.name} </Text>
+            <Button variant="link" fontSize="lg">
+              {genre.name}{" "}
+            </Button>
           </HStack>
         </ListItem>
       ))}
