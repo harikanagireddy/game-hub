@@ -23,8 +23,12 @@ const GenreList = () => {
               borderRadius={8}
               src={getOptimizedImages(genre.image_background)}
             />
-            <Button variant="link" fontSize="lg">
-              {genre.name}{" "}
+            <Button
+              onClick={() => console.log("selected genre:", genre)}
+              variant="link"
+              fontSize="lg"
+            >
+              {genre.name}
             </Button>
           </HStack>
         </ListItem>
