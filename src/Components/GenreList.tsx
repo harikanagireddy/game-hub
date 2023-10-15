@@ -6,10 +6,14 @@ import {
   ListItem,
   Spinner,
 } from "@chakra-ui/react";
-import useGenres from "../hooks/useGenres";
+import useGenres, { Genre } from "../hooks/useGenres";
 import getOptimizedImages from "../services/getOptimizedImages";
 
-const GenreList = () => {
+interface selectedGenreProps {
+  onSelectedGenre: (genre: Genre) => void;
+}
+
+const GenreList = ({ onSelectedGenre }: selectedGenreProps) => {
   const { data, isLoading, error } = useGenres();
   if (isLoading) return <Spinner />;
   if (error) return null;
@@ -24,7 +28,7 @@ const GenreList = () => {
               src={getOptimizedImages(genre.image_background)}
             />
             <Button
-              onClick={() => console.log("selected genre:", genre)}
+              onClick={() => onSelectedGenre(genre)}
               variant="link"
               fontSize="lg"
             >
