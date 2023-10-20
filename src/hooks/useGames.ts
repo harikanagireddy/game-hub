@@ -24,7 +24,8 @@ useData<Game>('/games',
   params:
   {// not renaming below with gameQuery because gameQuery will pass object which will effect when we are passing individual params. i.e, we cannot fetch by individual genre or so
     genres:gameQuery.genre?.id,
-    platforms: gameQuery.platform?.id
+    platforms: gameQuery.platform?.id,
+    ordering : gameQuery.sortOrder,
   },
 
 }, 
