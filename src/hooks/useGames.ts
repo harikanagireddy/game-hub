@@ -14,6 +14,7 @@ export interface Game {
     background_image: string;
     parent_platforms: {platform: Platform}[] // parent_platforms is a array of objects with a property "platform" of type Platform for clear understanding check the api call in the network tab
     metacritic : number;
+    rating_top: number;
   }
   
  
