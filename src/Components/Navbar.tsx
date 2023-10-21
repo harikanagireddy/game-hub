@@ -1,7 +1,7 @@
 import { HStack, Image } from "@chakra-ui/react";
 import logo from "../assets/logo.webp";
 import SwitchColorMode from "./SwitchColorMode";
-import SearchInput from "./Searchinput";
+import SearchInput from "./SearchInput";
 
 interface searchInputProps {
   onSearch: (searchInput: string) => void;

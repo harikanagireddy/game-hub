@@ -17,6 +17,7 @@ interface selectedGenreProps {
 
 const GenreList = ({ onSelectedGenre, selectedGenre }: selectedGenreProps) => {
   const { data, isLoading, error } = useGenres();
+  //didnot remove below 2 lines in case in future we decide to fetch genres from server then we need spinner
   if (isLoading) return <Spinner />;
   if (error) return null;
   return (
